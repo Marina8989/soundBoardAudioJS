@@ -9,6 +9,15 @@ sounds.forEach(sound => {
 
 
     btn.addEventListener('click', () => {
-        console.log('clicked')
+        stopPlay();
+        document.getElementById(sound).play();
     })
 })
+
+function stopPlay() {
+    sounds.forEach(sound => {
+        let audio = document.getElementById('sound');
+         audio.pause();
+         audio.currentTime = 0;
+    })
+}
